@@ -26,11 +26,12 @@
   </head>
   <body>
     <div id="root">
-      <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: Arial, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+      <div id="loading-fallback" style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: Arial, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
         <div style="text-align: center; color: white;">
           <div style="width: 50px; height: 50px; border: 3px solid rgba(255,255,255,0.3); border-top: 3px solid white; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 20px;"></div>
           <h2 style="margin: 0 0 10px 0;">Loading Mindspace...</h2>
           <p style="margin: 0; opacity: 0.8;">Your wellness journey awaits</p>
+          <p id="debug-info" style="margin: 10px 0; font-size: 12px; opacity: 0.6;">Initializing...</p>
         </div>
       </div>
       <style>
@@ -40,6 +41,31 @@
         }
       </style>
     </div>
+    
+    <script>
+      // Debug script loading
+      console.log('HTML: Page loaded, attempting to load React app');
+      
+      // Update debug info
+      setTimeout(() => {
+        const debugInfo = document.getElementById('debug-info');
+        if (debugInfo) {
+          debugInfo.textContent = 'Loading React bundle...';
+        }
+      }, 1000);
+      
+      // If React doesn't load in 10 seconds, show error
+      setTimeout(() => {
+        const loadingFallback = document.getElementById('loading-fallback');
+        if (loadingFallback && loadingFallback.style.display !== 'none') {
+          const debugInfo = document.getElementById('debug-info');
+          if (debugInfo) {
+            debugInfo.innerHTML = '⚠️ React app failed to load. <button onclick="window.location.reload()" style="margin-left: 10px; padding: 5px 10px; background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3); border-radius: 3px; cursor: pointer;">Retry</button>';
+          }
+        }
+      }, 10000);
+    </script>
+    
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
