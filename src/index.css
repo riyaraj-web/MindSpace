@@ -4091,7 +4091,7 @@ ogle Authentication Styles */
 .auth-divider {
   display: flex;
   align-items: center;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
   text-align: center;
 }
 
@@ -4104,9 +4104,9 @@ ogle Authentication Styles */
 }
 
 .auth-divider span {
-  padding: 0 1rem;
+  padding: 0 0.75rem;
   color: #64748b;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: 500;
 }
 
@@ -4115,13 +4115,13 @@ ogle Authentication Styles */
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  padding: 0.875rem 1.5rem;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
   background: white;
   border: 2px solid #e2e8f0;
-  border-radius: 12px;
+  border-radius: 10px;
   color: #374151;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -4156,15 +4156,17 @@ ogle Authentication Styles */
 
 .google-icon {
   flex-shrink: 0;
+  width: 18px;
+  height: 18px;
 }
 
-/* Enhanced Auth Form Styles */
+/* Enhanced Auth Form Styles - Compact Horizontal Layout */
 .auth-container {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 1rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   position: relative;
   overflow: hidden;
@@ -4193,65 +4195,65 @@ ogle Authentication Styles */
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 24px;
-  padding: 3rem;
+  border-radius: 16px;
+  padding: 2rem;
   box-shadow: 
-    0 25px 80px rgba(0, 0, 0, 0.15),
+    0 15px 40px rgba(0, 0, 0, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
   width: 100%;
-  max-width: 450px;
+  max-width: 380px;
   position: relative;
   z-index: 1;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .auth-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   box-shadow: 
-    0 35px 100px rgba(0, 0, 0, 0.2),
+    0 20px 50px rgba(0, 0, 0, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .auth-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .auth-header h2 {
-  font-size: 1.875rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #1a202c;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .auth-header p {
   color: #64748b;
-  font-size: 1rem;
+  font-size: 0.875rem;
 }
 
 .auth-form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.375rem;
 }
 
 .form-group label {
   font-weight: 600;
   color: #374151;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
 }
 
 .form-group input {
-  padding: 0.875rem 1rem;
+  padding: 0.75rem 0.875rem;
   border: 2px solid #e2e8f0;
-  border-radius: 12px;
-  font-size: 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
   transition: all 0.2s ease;
   background: #fafafa;
 }
@@ -4270,21 +4272,21 @@ ogle Authentication Styles */
 
 .field-error {
   color: #ef4444;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 500;
 }
 
 .auth-button {
-  padding: 0.875rem 1.5rem;
+  padding: 0.75rem 1.25rem;
   background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
   color: white;
   border: none;
-  border-radius: 12px;
-  font-size: 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 .auth-button:hover {
@@ -4304,14 +4306,14 @@ ogle Authentication Styles */
 
 .auth-footer {
   text-align: center;
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
   border-top: 1px solid #e2e8f0;
 }
 
 .auth-footer p {
   color: #64748b;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
 }
 
 .link-button {
@@ -4331,25 +4333,30 @@ ogle Authentication Styles */
 .error-message {
   background: #fef2f2;
   color: #dc2626;
-  padding: 0.75rem 1rem;
+  padding: 0.625rem 0.875rem;
   border-radius: 8px;
   border: 1px solid #fecaca;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: 500;
 }
 
 /* Responsive Design */
 @media (max-width: 480px) {
   .auth-container {
-    padding: 1rem;
+    padding: 0.75rem;
   }
   
   .auth-card {
-    padding: 2rem;
+    padding: 1.5rem;
+    max-width: 320px;
   }
   
   .auth-header h2 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+  }
+  
+  .auth-header p {
+    font-size: 0.8rem;
   }
 }/* M
 odern Glassmorphism Cards */
