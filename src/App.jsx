@@ -54,6 +54,8 @@ const AppContent = () => {
 };
 
 function App() {
+    console.log('App: Component rendering');
+    
     return (
         <AuthProvider>
             <Router>
