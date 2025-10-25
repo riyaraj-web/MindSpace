@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import TestApp from './TestApp.jsx'
 import ErrorBoundary from './components/ErrorBoundary.jsx'
-// import './index.css'
+import './index.css'
 
 console.log('main.jsx: Starting app initialization');
 
@@ -15,7 +15,7 @@ if (loadingFallback) {
 }
 
 // Use TestApp temporarily to debug
-const USE_TEST_APP = true;
+const USE_TEST_APP = false;
 
 try {
   const rootElement = document.getElementById('root');

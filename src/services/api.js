@@ -54,17 +54,41 @@ class ApiService {
     
     return delay(300).then(() => {
       if (endpoint === '/auth/login') {
-        const { email, password } = JSON.parse(options.body || '{}');
+        const userData = JSON.parse(options.body || '{}');
+        
+        // Handle Google OAuth login
+        if (userData.provider === 'google') {
+          const mockUser = {
+            id: '1',
+            name: userData.name || 'Google User',
+            email: userData.email || 'user@gmail.com',
+            provider: 'google',
+            avatar: userData.avatar || 'https://via.placeholder.com/100/4285f4/ffffff?text=G'
+          };
+          const mockToken = 'demo-jwt-token-google-' + Date.now();
+          this.setToken(mockToken);
+          
+          localStorage.setItem('demoUser', JSON.stringify(mockUser));
+          
+          return {
+            message: 'Google login successful',
+            token: mockToken,
+            user: mockUser
+          };
+        }
+        
+        // Handle regular email/password login
+        const { email, password } = userData;
         if (email && password && password.length >= 3) {
           const mockUser = {
             id: '1',
             name: email.split('@')[0] || 'Demo User',
-            email: email
+            email: email,
+            provider: 'email'
           };
           const mockToken = 'demo-jwt-token-' + Date.now();
           this.setToken(mockToken);
           
-          // Store user data in localStorage for persistence
           localStorage.setItem('demoUser', JSON.stringify(mockUser));
           
           return {
@@ -77,17 +101,41 @@ class ApiService {
       }
       
       if (endpoint === '/auth/register') {
-        const { name, email, password } = JSON.parse(options.body || '{}');
+        const userData = JSON.parse(options.body || '{}');
+        
+        // Handle Google OAuth registration
+        if (userData.provider === 'google') {
+          const mockUser = {
+            id: '1',
+            name: userData.name || 'Google User',
+            email: userData.email || 'newuser@gmail.com',
+            provider: 'google',
+            avatar: userData.avatar || 'https://via.placeholder.com/100/4285f4/ffffff?text=G'
+          };
+          const mockToken = 'demo-jwt-token-google-' + Date.now();
+          this.setToken(mockToken);
+          
+          localStorage.setItem('demoUser', JSON.stringify(mockUser));
+          
+          return {
+            message: 'Google registration successful',
+            token: mockToken,
+            user: mockUser
+          };
+        }
+        
+        // Handle regular email registration
+        const { name, email, password } = userData;
         if (name && email && password && password.length >= 3) {
           const mockUser = {
             id: '1',
             name: name,
-            email: email
+            email: email,
+            provider: 'email'
           };
           const mockToken = 'demo-jwt-token-' + Date.now();
           this.setToken(mockToken);
           
-          // Store user data in localStorage for persistence
           localStorage.setItem('demoUser', JSON.stringify(mockUser));
           
           return {
@@ -112,7 +160,8 @@ class ApiService {
             user: {
               id: '1',
               name: 'Demo User',
-              email: 'demo@mindspace.com'
+              email: 'demo@mindspace.com',
+              provider: 'email'
             }
           };
         }
