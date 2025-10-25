@@ -27,11 +27,10 @@ export const AuthProvider = ({ children }) => {
           setUser(response.user);
         } catch (error) {
           console.error('Auth check failed:', error);
-          // Don't remove token in dev mode to allow fallback
-          if (!import.meta.env.DEV) {
-            localStorage.removeItem('authToken');
-            apiService.setToken(null);
-          }
+          // Clear invalid tokens
+          localStorage.removeItem('authToken');
+          localStorage.removeItem('demoUser');
+          apiService.setToken(null);
         }
       }
       setLoading(false);

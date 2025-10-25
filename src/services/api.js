@@ -33,84 +33,76 @@ class ApiService {
 
   // Generic request method
   async request(endpoint, options = {}) {
-    // In development mode, simulate API responses if backend is not available
-    if (this.devMode && endpoint.includes('/auth/')) {
+    // Always use simulation for demo purposes (no backend required)
+    console.log('Demo mode: Using local simulation for', endpoint);
+    
+    if (endpoint.includes('/auth/')) {
       return this.simulateAuthRequest(endpoint, options);
     }
-
-    const url = `${this.baseURL}${endpoint}`;
-    const config = {
-      headers: this.getHeaders(),
-      ...options,
-    };
-
-    try {
-      const response = await fetch(url, config);
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || 'API request failed');
-      }
-
-      return data;
-    } catch (error) {
-      console.error('API Error:', error);
-      
-      // In development mode, fall back to local storage simulation
-      if (this.devMode && error.message.includes('fetch')) {
-        console.warn('Backend not available, using local simulation');
-        return this.simulateRequest(endpoint, options);
-      }
-      
-      throw error;
-    }
+    
+    return this.simulateRequest(endpoint, options);
   }
 
-  // Simulate API requests for development
+  // Simulate API requests for demo purposes
   simulateAuthRequest(endpoint, options) {
-    const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+    const delay = (ms) => new Promise(resolve => setTimeout(resolve, 300));
     
-    return delay(500).then(() => {
+    return delay(300).then(() => {
       if (endpoint === '/auth/login') {
         const { email, password } = JSON.parse(options.body || '{}');
-        if (email && password) {
+        if (email && password && password.length >= 3) {
           const mockUser = {
             id: '1',
-            name: email.split('@')[0],
+            name: email.split('@')[0] || 'Demo User',
             email: email
           };
-          const mockToken = 'mock-jwt-token-' + Date.now();
+          const mockToken = 'demo-jwt-token-' + Date.now();
           this.setToken(mockToken);
+          
+          // Store user data in localStorage for persistence
+          localStorage.setItem('demoUser', JSON.stringify(mockUser));
+          
           return {
             message: 'Login successful',
             token: mockToken,
             user: mockUser
           };
         }
-        throw new Error('Invalid credentials');
+        throw new Error('Please enter valid email and password (min 3 characters)');
       }
       
       if (endpoint === '/auth/register') {
         const { name, email, password } = JSON.parse(options.body || '{}');
-        if (name && email && password) {
+        if (name && email && password && password.length >= 3) {
           const mockUser = {
             id: '1',
             name: name,
             email: email
           };
-          const mockToken = 'mock-jwt-token-' + Date.now();
+          const mockToken = 'demo-jwt-token-' + Date.now();
           this.setToken(mockToken);
+          
+          // Store user data in localStorage for persistence
+          localStorage.setItem('demoUser', JSON.stringify(mockUser));
+          
           return {
             message: 'User registered successfully',
             token: mockToken,
             user: mockUser
           };
         }
-        throw new Error('Registration failed');
+        throw new Error('Please fill all fields (password min 3 characters)');
       }
       
       if (endpoint === '/auth/profile') {
         if (this.token) {
+          // Try to get stored user data
+          const storedUser = localStorage.getItem('demoUser');
+          if (storedUser) {
+            return {
+              user: JSON.parse(storedUser)
+            };
+          }
           return {
             user: {
               id: '1',
