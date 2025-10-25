@@ -19,24 +19,32 @@ export const AuthProvider = ({ children }) => {
   // Check if user is logged in on app start
   useEffect(() => {
     const checkAuth = async () => {
-      const token = localStorage.getItem('authToken');
-      if (token) {
-        try {
+      console.log('AuthContext: Starting auth check');
+      try {
+        const token = localStorage.getItem('authToken');
+        console.log('AuthContext: Token found:', !!token);
+        if (token) {
           apiService.setToken(token);
           const response = await apiService.getProfile();
+          console.log('AuthContext: Profile loaded:', response.user);
           setUser(response.user);
-        } catch (error) {
-          console.error('Auth check failed:', error);
-          // Clear invalid tokens
-          localStorage.removeItem('authToken');
-          localStorage.removeItem('demoUser');
-          apiService.setToken(null);
         }
+      } catch (error) {
+        console.error('Auth check failed:', error);
+        // Clear invalid tokens
+        localStorage.removeItem('authToken');
+        localStorage.removeItem('demoUser');
+        apiService.setToken(null);
+        setUser(null);
+      } finally {
+        console.log('AuthContext: Setting loading to false');
+        setLoading(false);
       }
-      setLoading(false);
     };
 
-    checkAuth();
+    // Add a small delay to ensure DOM is ready
+    const timer = setTimeout(checkAuth, 100);
+    return () => clearTimeout(timer);
   }, []);
 
   const login = async (credentials) => {

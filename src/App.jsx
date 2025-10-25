@@ -17,6 +17,8 @@ import './midnight-theme.css';
 const AppContent = () => {
     const { isAuthenticated, loading } = useAuth();
 
+    console.log('AppContent render:', { isAuthenticated, loading });
+
     if (loading) {
         return (
             <div className="loading-container">

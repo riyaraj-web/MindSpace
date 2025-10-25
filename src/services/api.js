@@ -1,5 +1,5 @@
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
-const DEV_MODE = import.meta.env.VITE_DEV_MODE === 'true' || import.meta.env.DEV;
+const DEV_MODE = import.meta.env.VITE_DEV_MODE === 'true' || import.meta.env.DEV || import.meta.env.MODE === 'development';
 
 class ApiService {
   constructor() {
@@ -36,11 +36,16 @@ class ApiService {
     // Always use simulation for demo purposes (no backend required)
     console.log('Demo mode: Using local simulation for', endpoint);
     
-    if (endpoint.includes('/auth/')) {
-      return this.simulateAuthRequest(endpoint, options);
+    try {
+      if (endpoint.includes('/auth/')) {
+        return await this.simulateAuthRequest(endpoint, options);
+      }
+      
+      return await this.simulateRequest(endpoint, options);
+    } catch (error) {
+      console.error('API request failed:', error);
+      throw error;
     }
-    
-    return this.simulateRequest(endpoint, options);
   }
 
   // Simulate API requests for demo purposes

@@ -15,5 +15,10 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ]
+  ],
+  "env": {
+    "VITE_DEV_MODE": "true",
+    "VITE_APP_NAME": "Mindspace",
+    "VITE_APP_VERSION": "1.0.0"
+  }
 }
