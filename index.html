@@ -67,6 +67,34 @@
       }, 10000);
     </script>
     
-    <script type="module" src="/src/minimal.jsx"></script>
+    <script type="module">
+      console.log('Inline script: Starting');
+      
+      // Simple test without any imports first
+      const testElement = document.createElement('div');
+      testElement.innerHTML = `
+        <div style="padding: 20px; text-align: center; font-family: Arial, sans-serif; background: #28a745; color: white; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <h1>🎉 FIXED!</h1>
+          <p>Mindspace is now working without React imports</p>
+          <button onclick="alert('Button works!')" style="padding: 10px 20px; background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3); border-radius: 5px; cursor: pointer; font-size: 16px; margin-top: 10px;">
+            Test Button
+          </button>
+          <p style="margin-top: 20px; font-size: 14px; opacity: 0.8;">If you see this, the deployment is working!</p>
+        </div>
+      `;
+      
+      // Hide loading and show our content
+      const loadingFallback = document.getElementById('loading-fallback');
+      if (loadingFallback) {
+        loadingFallback.style.display = 'none';
+      }
+      
+      const root = document.getElementById('root');
+      if (root) {
+        root.appendChild(testElement);
+      }
+      
+      console.log('Inline script: Success');
+    </script>
   </body>
 </html>
