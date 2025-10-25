@@ -7,8 +7,8 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Inter', sans-serif;
   line-height: 1.6;
-  color: #2d3748;
-  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  color: #ffffff;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -511,14 +511,16 @@ ood Tracker */
 }
 
 .quick-actions {
-  background: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
 .quick-actions h3 {
-  color: #4a5568;
+  color: #ffffff;
   margin-bottom: 1.5rem;
 }
 
@@ -581,15 +583,17 @@ me CTA */
 }/
 * AI Insights */
 .ai-insights {
-  background: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
   margin-bottom: 2rem;
 }
 
 .ai-insights h3 {
-  color: #4a5568;
+  color: #ffffff;
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
@@ -611,27 +615,27 @@ me CTA */
 }
 
 .insight-card.positive {
-  background: #f0fff4;
+  background: rgba(72, 187, 120, 0.2);
   border-left-color: #48bb78;
 }
 
 .insight-card.concern {
-  background: #fffaf0;
+  background: rgba(237, 137, 54, 0.2);
   border-left-color: #ed8936;
 }
 
 .insight-card.improvement {
-  background: #f0f9ff;
+  background: rgba(66, 153, 225, 0.2);
   border-left-color: #4299e1;
 }
 
 .insight-card.warning {
-  background: #fef5e7;
+  background: rgba(246, 173, 85, 0.2);
   border-left-color: #f6ad55;
 }
 
 .insight-card.pattern {
-  background: #faf5ff;
+  background: rgba(159, 122, 234, 0.2);
   border-left-color: #9f7aea;
 }
 
@@ -642,22 +646,24 @@ me CTA */
 
 .insight-content h4 {
   margin: 0 0 0.5rem 0;
-  color: #2d3748;
+  color: #ffffff;
   font-size: 1rem;
 }
 
 .insight-content p {
   margin: 0;
-  color: #4a5568;
+  color: #e2e8f0;
   line-height: 1.5;
 }
 
 /* Mood Analytics */
 .mood-analytics {
-  background: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
   margin-bottom: 2rem;
 }
 
@@ -669,16 +675,16 @@ me CTA */
 }
 
 .analytics-header h3 {
-  color: #4a5568;
+  color: #ffffff;
   margin: 0;
 }
 
 .time-range-select {
   padding: 0.5rem 1rem;
-  border: 2px solid #e2e8f0;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 5px;
-  background: white;
-  color: #4a5568;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -4138,17 +4144,19 @@ ogle Authentication Styles */
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
 }
 
 .auth-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   padding: 2.5rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   width: 100%;
   max-width: 420px;
-  backdrop-filter: blur(10px);
+  color: #ffffff;
 }
 
 .auth-header {
@@ -4159,12 +4167,12 @@ ogle Authentication Styles */
 .auth-header h2 {
   font-size: 1.875rem;
   font-weight: 700;
-  color: #1a202c;
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
 .auth-header p {
-  color: #64748b;
+  color: #e2e8f0;
   font-size: 1rem;
 }
 
@@ -4182,24 +4190,29 @@ ogle Authentication Styles */
 
 .form-group label {
   font-weight: 600;
-  color: #374151;
+  color: #e2e8f0;
   font-size: 0.875rem;
 }
 
 .form-group input {
   padding: 0.875rem 1rem;
-  border: 2px solid #e2e8f0;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   font-size: 1rem;
   transition: all 0.2s ease;
-  background: #fafafa;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
 }
 
 .form-group input:focus {
   outline: none;
   border-color: #6c5ce7;
-  background: white;
-  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.3);
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .form-group input.error {
@@ -4723,4 +4736,184 @@ visibility issues - Modern Glassmorphism Cards */
 .modern-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+}/* Dark 
+Theme Overrides */
+.page {
+  color: #ffffff;
+}
+
+.page h1, .page h2, .page h3, .page h4, .page h5, .page h6 {
+  color: #ffffff;
+}
+
+.page p {
+  color: #e2e8f0;
+}
+
+/* Feature Cards Dark Theme */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  color: #ffffff;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card h3 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: #e2e8f0;
+}
+
+/* Dashboard Stats Dark Theme */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.stat-card h3 {
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  color: #cbd5e0;
+  font-size: 0.8rem;
+}
+
+/* Mood Trend Dark Theme */
+.mood-trend {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+}
+
+.mood-trend h3 {
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.mood-chart {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.mood-point {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  min-width: 80px;
+}
+
+.mood-emoji {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.mood-date {
+  font-size: 0.8rem;
+  color: #cbd5e0;
+}
+
+.mood-label {
+  font-size: 0.8rem;
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 3rem 0;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #e2e8f0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.cta-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
 }
