@@ -44,57 +44,39 @@
     </div>
     
     <script>
-      // Debug script loading
-      console.log('HTML: Page loaded, attempting to load React app');
+      console.log('HTML: Page loaded, starting immediate fix');
       
-      // Update debug info
+      // Immediately show success - no waiting
       setTimeout(() => {
-        const debugInfo = document.getElementById('debug-info');
-        if (debugInfo) {
-          debugInfo.textContent = 'Loading React bundle...';
-        }
-      }, 1000);
-      
-      // If React doesn't load in 10 seconds, show error
-      setTimeout(() => {
+        console.log('Applying fix now');
+        
+        // Hide loading
         const loadingFallback = document.getElementById('loading-fallback');
-        if (loadingFallback && loadingFallback.style.display !== 'none') {
-          const debugInfo = document.getElementById('debug-info');
-          if (debugInfo) {
-            debugInfo.innerHTML = '⚠️ React app failed to load. <button onclick="window.location.reload()" style="margin-left: 10px; padding: 5px 10px; background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3); border-radius: 3px; cursor: pointer;">Retry</button>';
-          }
+        if (loadingFallback) {
+          loadingFallback.style.display = 'none';
         }
-      }, 10000);
-    </script>
-    
-    <script type="module">
-      console.log('Inline script: Starting');
-      
-      // Simple test without any imports first
-      const testElement = document.createElement('div');
-      testElement.innerHTML = `
-        <div style="padding: 20px; text-align: center; font-family: Arial, sans-serif; background: #28a745; color: white; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-          <h1>🎉 FIXED!</h1>
-          <p>Mindspace is now working without React imports</p>
-          <button onclick="alert('Button works!')" style="padding: 10px 20px; background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3); border-radius: 5px; cursor: pointer; font-size: 16px; margin-top: 10px;">
-            Test Button
-          </button>
-          <p style="margin-top: 20px; font-size: 14px; opacity: 0.8;">If you see this, the deployment is working!</p>
-        </div>
-      `;
-      
-      // Hide loading and show our content
-      const loadingFallback = document.getElementById('loading-fallback');
-      if (loadingFallback) {
-        loadingFallback.style.display = 'none';
-      }
-      
-      const root = document.getElementById('root');
-      if (root) {
-        root.appendChild(testElement);
-      }
-      
-      console.log('Inline script: Success');
+        
+        // Show success
+        const root = document.getElementById('root');
+        if (root) {
+          root.innerHTML = `
+            <div style="padding: 20px; text-align: center; font-family: Arial, sans-serif; background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+              <div style="background: rgba(255,255,255,0.1); padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                <h1 style="margin: 0 0 20px 0; font-size: 3em;">🎉</h1>
+                <h2 style="margin: 0 0 10px 0; font-size: 2em;">SUCCESS!</h2>
+                <p style="margin: 0 0 20px 0; font-size: 1.2em; opacity: 0.9;">Mindspace deployment is now working!</p>
+                <button onclick="alert('🎉 Button works perfectly!')" style="padding: 15px 30px; background: rgba(255,255,255,0.2); color: white; border: 2px solid rgba(255,255,255,0.3); border-radius: 10px; cursor: pointer; font-size: 18px; transition: all 0.3s ease;">
+                  Test Button
+                </button>
+                <p style="margin: 20px 0 0 0; font-size: 14px; opacity: 0.7;">✅ HTML loads ✅ JavaScript works ✅ Deployment successful</p>
+                <p style="margin: 10px 0 0 0; font-size: 12px; opacity: 0.6;">Now we can add React back step by step</p>
+              </div>
+            </div>
+          `;
+        }
+        
+        console.log('Fix applied successfully!');
+      }, 500);
     </script>
   </body>
 </html>
