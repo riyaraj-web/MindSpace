@@ -2,7 +2,6 @@
 
 A comprehensive full-stack mental wellness application built with React and Node.js, featuring mood tracking, journaling, meditation, and habit monitoring with a beautiful midnight indigo theme.
 
-![Mindspace Preview](https://via.placeholder.com/800x400/0F1419/A5B4FC?text=Mindspace+Mental+Wellness+Platform)
 
 ## ✨ Features
 
@@ -26,11 +25,6 @@ A comprehensive full-stack mental wellness application built with React and Node
 - **Data Visualization** - Interactive charts with Chart.js
 - **Personalized Insights** - AI-powered recommendations
 
-### 🎨 Premium Design
-- **Midnight Indigo Theme** - Sophisticated dark theme
-- **Glassmorphism Effects** - Modern UI with backdrop blur
-- **Responsive Design** - Works on all devices
-- **Smooth Animations** - Premium feel with subtle transitions
 
 ## 🚀 Tech Stack
 
@@ -105,78 +99,7 @@ cp .env.example .env
 
 # Start frontend
 npm run dev
-```
-
-## 🌐 Environment Variables
-
-### Frontend (.env)
-```env
-VITE_API_URL=http://localhost:5000/api
-VITE_DEV_MODE=false
-```
-
-### Backend (server/.env)
-```env
-PORT=5000
-NODE_ENV=development
-MONGODB_URI=mongodb://localhost:27017/mindspace
-JWT_SECRET=your-super-secure-jwt-secret-key-here
-CLIENT_URL=http://localhost:5173
-```
-
-## 📱 API Endpoints
-
-### Authentication
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - User login
-- `GET /api/auth/profile` - Get user profile
-- `PUT /api/auth/profile` - Update user profile
-
-### Mood Tracking
-- `POST /api/mood` - Create mood entry
-- `GET /api/mood` - Get mood entries
-- `GET /api/mood/analytics` - Get mood analytics
-- `PUT /api/mood/:id` - Update mood entry
-- `DELETE /api/mood/:id` - Delete mood entry
-
-### Journal
-- `POST /api/journal` - Create journal entry
-- `GET /api/journal` - Get journal entries
-- `GET /api/journal/stats/overview` - Get journal statistics
-- `PUT /api/journal/:id` - Update journal entry
-- `DELETE /api/journal/:id` - Delete journal entry
-
-### Habits
-- `POST /api/habits` - Create habit
-- `GET /api/habits` - Get user habits
-- `POST /api/habits/:id/complete` - Mark habit as completed
-- `GET /api/habits/:id/analytics` - Get habit analytics
-- `PUT /api/habits/:id` - Update habit
-- `DELETE /api/habits/:id` - Delete habit
-
-### Meditation
-- `POST /api/meditation/sessions` - Start meditation session
-- `GET /api/meditation/history` - Get meditation history
-- `GET /api/meditation/stats` - Get meditation statistics
-- `GET /api/meditation/recommendations` - Get personalized recommendations
-
-## 🎨 Design System
-
-### Color Palette
-- **Primary Background:** `#0F1419` (Almost black)
-- **Secondary Background:** `#1A1F2E` (Dark slate)
-- **Card Background:** `#252B3B` (Dark card)
-- **Accent Primary:** `#4C6EF5` (Bright blue)
-- **Accent Secondary:** `#7B61FF` (Purple)
-- **Text Primary:** `#A5B4FC` (Soft lavender)
-- **Border Color:** `#6366F1` (Blue border)
-
-### Typography
-- **Font Family:** SF Pro Display, system fonts
-- **Headings:** 700-800 weight with gradient text
-- **Body:** 400-500 weight with high contrast
-- **Code:** SF Mono for monospace elements
-
+``
 ## 📊 Database Schema
 
 ### User Model
@@ -265,62 +188,5 @@ railway up
 2. Create new cluster
 3. Get connection string
 4. Update `MONGODB_URI` in environment variables
-
-## 🧪 Testing
-
-```bash
-# Run frontend tests
-npm test
-
-# Run backend tests
-cd server && npm test
-
-# Run linting
-npm run lint
-```
-
-## 📈 Performance Features
-
-- **Code Splitting** - Lazy loading for optimal performance
-- **Image Optimization** - Compressed assets
-- **Caching** - Browser and API response caching
-- **Minification** - Optimized production builds
-- **Tree Shaking** - Remove unused code
-
-## 🔒 Security Features
-
-- **JWT Authentication** - Secure token-based auth
-- **Password Hashing** - bcrypt with salt rounds
-- **Input Validation** - Comprehensive request validation
-- **Rate Limiting** - Prevent API abuse
-- **CORS Protection** - Configurable cross-origin requests
-- **Security Headers** - Helmet.js middleware
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **React Team** - For the amazing React library
-- **Chart.js** - For beautiful data visualizations
-- **MongoDB** - For the flexible database solution
-- **Vercel** - For seamless deployment platform
-
-## 📞 Contact
-
-- **Email:** your.email@example.com
-- **LinkedIn:** [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- **Portfolio:** [Your Portfolio](https://yourportfolio.com)
-
----
 
 **Built with ❤️ for mental wellness and personal growth**
