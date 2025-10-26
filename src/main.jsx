@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import TestApp from './TestApp.jsx'
 import ErrorBoundary from './components/ErrorBoundary.jsx'
-import './midnight-theme.css'
-import './index.css'
+import './styles.css'
 
 console.log('main.jsx: Starting app initialization');
 
