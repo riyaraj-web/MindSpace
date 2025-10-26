@@ -12,7 +12,6 @@ import HabitTracker from './pages/HabitTracker';
 import RecoveryStoriesPage from './pages/RecoveryStoriesPage';
 import AIAssistantPage from './pages/AIAssistantPage';
 import AICompanion from './components/AICompanion';
-import './midnight-theme.css';
 
 const AppContent = () => {
     const { isAuthenticated, loading } = useAuth();
