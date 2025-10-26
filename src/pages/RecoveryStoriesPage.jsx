@@ -1,4 +1,3 @@
-import React from 'react';
 import RecoveryStoriesWorking from '../components/RecoveryStoriesWorking';
 
 const RecoveryStoriesPage = () => {
