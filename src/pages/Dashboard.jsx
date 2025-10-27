@@ -148,21 +148,21 @@ function Dashboard() {
       <div className="quick-actions">
         <h3>Quick Actions</h3>
         <div className="action-buttons">
-          <a href="/mood" className="action-btn">
+          <Link to="/mood" className="action-btn">
             🎯 Log Mood
-          </a>
-          <a href="/meditation" className="action-btn">
+          </Link>
+          <Link to="/meditation" className="action-btn">
             🧘 Meditate
-          </a>
-          <a href="/journal" className="action-btn">
+          </Link>
+          <Link to="/journal" className="action-btn">
             📝 Write
-          </a>
-          <a href="/breathing" className="action-btn">
+          </Link>
+          <Link to="/breathing" className="action-btn">
             🫁 Breathe
-          </a>
-          <a href="/habits" className="action-btn">
+          </Link>
+          <Link to="/habits" className="action-btn">
             🎯 Track Habits
-          </a>
+          </Link>
         </div>
       </div>
     </div>

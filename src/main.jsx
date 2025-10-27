@@ -4,8 +4,6 @@ import App from './App.jsx'
 import TestApp from './TestApp.jsx'
 import ErrorBoundary from './components/ErrorBoundary.jsx'
 import './styles.css'
-import './index.css'
-import './midnight-theme.css'
 
 console.log('main.jsx: Starting app initialization');
 

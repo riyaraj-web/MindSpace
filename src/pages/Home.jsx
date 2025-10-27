@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function Home() {
   return (
     <div className="page">
@@ -49,9 +51,9 @@ function Home() {
       </div>
       
       <div className="cta-section">
-        <a href="/dashboard" className="cta-button">
+        <Link to="/dashboard" className="cta-button">
           Start Your Wellness Journey
-        </a>
+        </Link>
       </div>
     </div>
   )
