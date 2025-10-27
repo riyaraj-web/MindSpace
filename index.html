@@ -256,6 +256,85 @@
         color: #4ade80 !important;
       }
       
+      /* Mobile Navigation Fix */
+      .mobile-menu-toggle {
+        display: none !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        border: 2px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 8px !important;
+        padding: 0.5rem !important;
+        cursor: pointer !important;
+      }
+      
+      .mobile-nav {
+        display: none !important;
+        position: fixed !important;
+        top: 0 !important;
+        right: -100% !important;
+        width: 320px !important;
+        height: 100vh !important;
+        background: white !important;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2) !important;
+        transition: right 0.3s ease !important;
+        z-index: 1002 !important;
+      }
+      
+      .mobile-nav.active {
+        right: 0 !important;
+      }
+      
+      .mobile-nav-header {
+        padding: 2rem 1.5rem 1rem !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        background: linear-gradient(135deg, #6366f1, #14b8a6) !important;
+        color: white !important;
+      }
+      
+      .close-mobile-nav {
+        background: none !important;
+        border: none !important;
+        color: white !important;
+        font-size: 1.5rem !important;
+        cursor: pointer !important;
+        padding: 0.5rem !important;
+        border-radius: 6px !important;
+      }
+      
+      .mobile-nav-links {
+        flex: 1 !important;
+        padding: 1rem 0 !important;
+      }
+      
+      .mobile-nav-link {
+        display: flex !important;
+        align-items: center !important;
+        gap: 1rem !important;
+        padding: 1rem 1.5rem !important;
+        color: #1e293b !important;
+        text-decoration: none !important;
+        transition: all 0.2s ease !important;
+        border-left: 3px solid transparent !important;
+      }
+      
+      .mobile-nav-link:hover {
+        background: rgba(99, 102, 241, 0.1) !important;
+        border-left-color: #6366f1 !important;
+      }
+      
+      .mobile-nav-overlay {
+        display: none !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+        z-index: 1001 !important;
+      }
+      
       /* Mobile Responsive */
       @media (max-width: 768px) {
         .hero h2 {
@@ -268,6 +347,18 @@
         
         .nav {
           display: none !important;
+        }
+        
+        .mobile-menu-toggle {
+          display: block !important;
+        }
+        
+        .mobile-nav {
+          display: block !important;
+        }
+        
+        .mobile-nav-overlay {
+          display: block !important;
         }
       }
       
@@ -405,6 +496,33 @@
     <script>
       // Debug script loading
       console.log('HTML: Page loaded, attempting to load React app');
+      
+      // Mobile menu fix - close any open mobile menus
+      document.addEventListener('DOMContentLoaded', function() {
+        // Hide mobile navigation by default
+        const mobileNavs = document.querySelectorAll('.mobile-nav');
+        mobileNavs.forEach(nav => {
+          nav.classList.remove('active');
+          nav.style.right = '-100%';
+        });
+        
+        // Hide mobile overlays
+        const overlays = document.querySelectorAll('.mobile-nav-overlay');
+        overlays.forEach(overlay => {
+          overlay.style.display = 'none';
+        });
+        
+        // Close mobile menu when clicking overlay
+        document.addEventListener('click', function(e) {
+          if (e.target.classList.contains('mobile-nav-overlay')) {
+            const mobileNav = document.querySelector('.mobile-nav');
+            if (mobileNav) {
+              mobileNav.classList.remove('active');
+            }
+            e.target.style.display = 'none';
+          }
+        });
+      });
       
       // Update debug info
       setTimeout(() => {
