@@ -25,8 +25,8 @@ const RecoveryStories = () => {
     { id: 'trauma', name: 'Trauma', icon: '💔', color: '#ef4444' },
     { id: 'addiction', name: 'Addiction', icon: '⛓️', color: '#10b981' },
     { id: 'grief', name: 'Grief', icon: '🕊️', color: '#6b7280' },
-    { id: 'relationships', name: 'Relationships', icon: '💕', color: '#ec4899' },
-    { id: 'work-stress', name: 'Work Stress', icon: '💼', color: '#14b8a6' },
+    { id: 'relationships', name: 'Relationships', icon: '💕', color: '#8b5cf6' },
+    { id: 'work-stress', name: 'Work Stress', icon: '💼', color: '#8b5cf6' },
     { id: 'self-esteem', name: 'Self-Esteem', icon: '🪞', color: '#f97316' }
   ];
 

@@ -39,7 +39,7 @@ const AIAssistant = () => {
     therapist: {
       name: 'Dr. Maya',
       emoji: '🌸',
-      color: '#ec4899',
+      color: '#8b5cf6',
       description: 'Professional and empathetic therapeutic approach',
       greeting: "Welcome. I'm Dr. Maya. This is a safe space where we can explore your thoughts and feelings together."
     }

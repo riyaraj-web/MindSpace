@@ -50,16 +50,16 @@ const Login = ({ onToggleMode }) => {
   };
 
   return (
-    <div className="auth-container">
-      <div className="auth-card">
-        <div className="auth-header">
-          <h2>Welcome Back</h2>
-          <p>Sign in to continue your wellness journey</p>
+    <div style={styles.container}>
+      <div style={styles.card}>
+        <div style={styles.header}>
+          <h2 style={styles.title}>Welcome Back</h2>
+          <p style={styles.subtitle}>Sign in to continue your wellness journey</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="auth-form">
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
+        <form onSubmit={handleSubmit} style={styles.form}>
+          <div style={styles.formGroup}>
+            <label htmlFor="email" style={styles.label}>Email</label>
             <input
               type="email"
               id="email"
@@ -68,11 +68,12 @@ const Login = ({ onToggleMode }) => {
               onChange={handleChange}
               required
               placeholder="Enter your email"
+              style={styles.input}
             />
           </div>
 
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
+          <div style={styles.formGroup}>
+            <label htmlFor="password" style={styles.label}>Password</label>
             <input
               type="password"
               id="password"
@@ -81,31 +82,32 @@ const Login = ({ onToggleMode }) => {
               onChange={handleChange}
               required
               placeholder="Enter your password"
+              style={styles.input}
             />
           </div>
 
           {error && (
-            <div className="error-message">
+            <div style={styles.error}>
               {error}
             </div>
           )}
 
           <button 
             type="submit" 
-            className="auth-button"
+            style={styles.signInButton}
             disabled={isLoading}
           >
             {isLoading ? 'Signing In...' : 'Sign In'}
           </button>
         </form>
 
-        <div className="auth-divider">
-          <span>or</span>
+        <div style={styles.divider}>
+          <span style={styles.dividerText}>or</span>
         </div>
 
         <button 
           type="button"
-          className="google-auth-button"
+          style={styles.googleButton}
           onClick={handleGoogleSignIn}
           disabled={isLoading}
         >
@@ -118,12 +120,12 @@ const Login = ({ onToggleMode }) => {
           {isLoading ? 'Signing In...' : 'Continue with Google'}
         </button>
 
-        <div className="auth-footer">
-          <p>
+        <div style={styles.footer}>
+          <p style={styles.footerText}>
             Don't have an account?{' '}
             <button 
               type="button" 
-              className="link-button"
+              style={styles.linkButton}
               onClick={onToggleMode}
             >
               Sign Up
@@ -133,6 +135,143 @@ const Login = ({ onToggleMode }) => {
       </div>
     </div>
   );
+};
+
+const styles = {
+  container: {
+    minHeight: '100vh',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    background: 'linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%)',
+    padding: '2rem'
+  },
+  card: {
+    background: '#fff',
+    borderRadius: '16px',
+    padding: '2rem 1.75rem',
+    boxShadow: '0 20px 60px rgba(0, 0, 0, 0.08)',
+    maxWidth: '380px',
+    width: '100%'
+  },
+  header: {
+    textAlign: 'center',
+    marginBottom: '1.5rem'
+  },
+  title: {
+    fontSize: '1.5rem',
+    fontWeight: '700',
+    background: 'linear-gradient(135deg, #667eea 0%, #06b6d4 100%)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+    marginBottom: '0.4rem'
+  },
+  subtitle: {
+    fontSize: '0.875rem',
+    color: '#64748b',
+    fontWeight: '400'
+  },
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '1rem'
+  },
+  formGroup: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.4rem'
+  },
+  label: {
+    fontSize: '0.85rem',
+    fontWeight: '600',
+    color: '#1e293b'
+  },
+  input: {
+    padding: '0.65rem 0.875rem',
+    border: '2px solid #e2e8f0',
+    borderRadius: '8px',
+    fontSize: '0.875rem',
+    transition: 'all 0.3s ease',
+    outline: 'none',
+    background: '#f8fafc'
+  },
+  error: {
+    background: 'rgba(239, 68, 68, 0.1)',
+    color: '#dc2626',
+    padding: '0.875rem 1.25rem',
+    borderRadius: '12px',
+    fontSize: '0.875rem',
+    fontWeight: '500',
+    border: '1px solid rgba(239, 68, 68, 0.2)',
+    textAlign: 'center'
+  },
+  signInButton: {
+    width: '100%',
+    background: 'linear-gradient(90deg, #667eea 0%, #06b6d4 50%, #14b8a6 100%)',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '8px',
+    padding: '0.75rem',
+    fontSize: '0.9rem',
+    fontWeight: '600',
+    cursor: 'pointer',
+    transition: 'all 0.3s ease',
+    boxShadow: '0 4px 15px rgba(102, 126, 234, 0.3)',
+    marginTop: '0.15rem'
+  },
+  divider: {
+    display: 'flex',
+    alignItems: 'center',
+    margin: '1.25rem 0',
+    position: 'relative'
+  },
+  dividerText: {
+    position: 'absolute',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    background: '#fff',
+    padding: '0 1rem',
+    color: '#94a3b8',
+    fontSize: '0.875rem',
+    fontWeight: '500'
+  },
+  googleButton: {
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '0.6rem',
+    padding: '0.65rem 1rem',
+    border: '2px solid #e2e8f0',
+    borderRadius: '8px',
+    background: '#fff',
+    color: '#1e293b',
+    fontSize: '0.875rem',
+    fontWeight: '600',
+    cursor: 'pointer',
+    transition: 'all 0.3s ease'
+  },
+  footer: {
+    textAlign: 'center',
+    marginTop: '1.25rem',
+    paddingTop: '1.25rem',
+    borderTop: '1px solid #e2e8f0'
+  },
+  footerText: {
+    color: '#64748b',
+    fontSize: '0.875rem'
+  },
+  linkButton: {
+    background: 'none',
+    border: 'none',
+    color: '#667eea',
+    fontWeight: '600',
+    cursor: 'pointer',
+    textDecoration: 'none',
+    fontSize: 'inherit',
+    transition: 'color 0.3s ease'
+  }
 };
 
 export default Login;

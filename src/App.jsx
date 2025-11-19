@@ -5,10 +5,10 @@ import AuthPage from './components/AuthPage';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import MoodTracker from './pages/MoodTracker';
-import Meditation from './pages/Meditation';
 import Journal from './pages/Journal';
-import BreathingPage from './pages/BreathingPage';
+import Meditation from './pages/Meditation';
 import HabitTracker from './pages/HabitTracker';
+import BreathingPage from './pages/BreathingPage';
 import RecoveryStoriesPage from './pages/RecoveryStoriesPage';
 import AIAssistantPage from './pages/AIAssistantPage';
 import AICompanion from './components/AICompanion';
@@ -39,10 +39,10 @@ const AppContent = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/mood" element={<MoodTracker />} />
-                    <Route path="/meditation" element={<Meditation />} />
                     <Route path="/journal" element={<Journal />} />
-                    <Route path="/breathing" element={<BreathingPage />} />
+                    <Route path="/meditation" element={<Meditation />} />
                     <Route path="/habits" element={<HabitTracker />} />
+                    <Route path="/breathing" element={<BreathingPage />} />
                     <Route path="/recovery-stories" element={<RecoveryStoriesPage />} />
                     <Route path="/ai-assistant" element={<AIAssistantPage />} />
                 </Routes>

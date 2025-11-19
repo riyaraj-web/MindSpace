@@ -17,13 +17,13 @@ const CollaborativeArt = () => {
   // Predefined healing colors
   const healingColors = [
     '#6366f1', // Calming blue
-    '#14b8a6', // Peaceful teal
+    '#8b5cf6', // Peaceful teal
     '#f59e0b', // Warm yellow
     '#ef4444', // Expressive red
     '#8b5cf6', // Spiritual purple
     '#10b981', // Growth green
     '#f97316', // Energy orange
-    '#ec4899', // Compassionate pink
+    '#8b5cf6', // Compassionate pink
     '#6b7280', // Grounding gray
     '#000000', // Deep black
     '#ffffff'  // Pure white

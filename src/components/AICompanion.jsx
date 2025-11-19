@@ -13,7 +13,7 @@ function AICompanion() {
     friendly: { emoji: '😊', name: 'Sage', color: '#4ade80' },
     wise: { emoji: '🧙‍♀️', name: 'Wisdom', color: '#8b5cf6' },
     playful: { emoji: '🌟', name: 'Spark', color: '#f59e0b' },
-    calm: { emoji: '🕊️', name: 'Serenity', color: '#06b6d4' }
+    calm: { emoji: '🕊️', name: 'Serenity', color: '#6366f1' }
   }
 
   const currentPersonality = companionPersonalities[companionMood]

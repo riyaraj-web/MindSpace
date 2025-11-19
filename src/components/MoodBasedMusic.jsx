@@ -26,7 +26,7 @@ function MoodBasedMusic({ currentMood, isPlaying, onToggle }) {
     },
     3: { // Okay
       tracks: [
-        { id: 7, name: 'Steady Flow', artist: 'Balance Point', duration: '8:00', frequency: '528Hz', color: '#06b6d4' },
+        { id: 7, name: 'Steady Flow', artist: 'Balance Point', duration: '8:00', frequency: '528Hz', color: '#6366f1' },
         { id: 8, name: 'Neutral Ground', artist: 'Equilibrium', duration: '10:30', frequency: '432Hz', color: '#8b5cf6' },
         { id: 9, name: 'Center Point', artist: 'Harmony Hub', duration: '9:45', frequency: '741Hz', color: '#10b981' }
       ],
@@ -36,7 +36,7 @@ function MoodBasedMusic({ currentMood, isPlaying, onToggle }) {
       tracks: [
         { id: 10, name: 'Joyful Breeze', artist: 'Positive Vibes', duration: '6:30', frequency: '852Hz', color: '#f59e0b' },
         { id: 11, name: 'Bright Horizon', artist: 'Sunny Sounds', duration: '8:15', frequency: '963Hz', color: '#ef4444' },
-        { id: 12, name: 'Happy Waves', artist: 'Cheerful Collective', duration: '7:00', frequency: '528Hz', color: '#06b6d4' }
+        { id: 12, name: 'Happy Waves', artist: 'Cheerful Collective', duration: '7:00', frequency: '528Hz', color: '#6366f1' }
       ],
       description: 'Energizing frequencies to amplify positivity'
     },
@@ -44,7 +44,7 @@ function MoodBasedMusic({ currentMood, isPlaying, onToggle }) {
       tracks: [
         { id: 13, name: 'Euphoric Heights', artist: 'Peak Performance', duration: '5:45', frequency: '963Hz', color: '#8b5cf6' },
         { id: 14, name: 'Celebration Song', artist: 'Victory Sounds', duration: '6:20', frequency: '852Hz', color: '#f59e0b' },
-        { id: 15, name: 'Pure Bliss', artist: 'Transcendence', duration: '9:00', frequency: '1111Hz', color: '#ec4899' }
+        { id: 15, name: 'Pure Bliss', artist: 'Transcendence', duration: '9:00', frequency: '1111Hz', color: '#8b5cf6' }
       ],
       description: 'High-frequency sounds to maintain peak state'
     }

@@ -29,9 +29,14 @@ function BreathingPage() {
   }
 
   return (
-    <div className="page">
-      <h2>🫁 Breathing Exercises</h2>
+    <div style={styles.container}>
+      <div style={styles.header}>
+        <span style={{ fontSize: '3rem', marginBottom: '1rem' }}>🫁</span>
+        <h1 style={styles.title}>Breathing Exercises</h1>
+        <p style={styles.subtitle}>Calm your mind with guided breathing techniques</p>
+      </div>
       
+      <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
       {!isActive ? (
         <div className="breathing-selection">
           <div className="technique-cards">
@@ -113,8 +118,40 @@ function BreathingPage() {
           </div>
         </div>
       </div>
+      </div>
     </div>
   )
+}
+
+const styles = {
+  container: {
+    minHeight: '100vh',
+    background: 'linear-gradient(to bottom, #f8fafc 0%, #f1f5f9 100%)',
+    padding: '2rem 1rem'
+  },
+  header: {
+    background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
+    borderRadius: '24px',
+    padding: '3rem 2rem',
+    marginBottom: '3rem',
+    boxShadow: '0 10px 40px rgba(102, 126, 234, 0.3)',
+    textAlign: 'center',
+    maxWidth: '1400px',
+    margin: '0 auto 3rem',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  title: {
+    fontSize: '2.5rem',
+    fontWeight: '700',
+    color: '#fff',
+    marginBottom: '0.75rem'
+  },
+  subtitle: {
+    fontSize: '1.125rem',
+    color: 'rgba(255,255,255,0.95)'
+  }
 }
 
 export default BreathingPage

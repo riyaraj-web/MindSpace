@@ -8,7 +8,7 @@ const TestApp = () => {
       padding: '20px',
       textAlign: 'center',
       fontFamily: 'Arial, sans-serif',
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
       minHeight: '100vh',
       color: 'white'
     }}>

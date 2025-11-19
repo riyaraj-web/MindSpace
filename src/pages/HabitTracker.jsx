@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { storage } from '../utils/storage'
 
 function HabitTracker() {
   const [habits, setHabits] = useState([])
@@ -11,8 +10,8 @@ function HabitTracker() {
     wellness: { icon: '🧘', color: '#10b981', name: 'Wellness' },
     fitness: { icon: '💪', color: '#f59e0b', name: 'Fitness' },
     mindfulness: { icon: '🧠', color: '#8b5cf6', name: 'Mindfulness' },
-    social: { icon: '👥', color: '#06b6d4', name: 'Social' },
-    creativity: { icon: '🎨', color: '#ec4899', name: 'Creativity' },
+    social: { icon: '👥', color: '#6366f1', name: 'Social' },
+    creativity: { icon: '🎨', color: '#8b5cf6', name: 'Creativity' },
     learning: { icon: '📚', color: '#3b82f6', name: 'Learning' }
   }
 
@@ -169,24 +168,29 @@ function HabitTracker() {
   }
 
   return (
-    <div className="page">
-      <div className="habits-header">
-        <h2>🎯 Habit Tracker</h2>
+    <div style={styles.container}>
+      <div style={styles.header}>
+        <span style={{ fontSize: '3rem', marginBottom: '1rem' }}>🎯</span>
+        <h1 style={styles.title}>Habit Tracker</h1>
+        <p style={styles.subtitle}>Build lasting routines and track your progress</p>
+      </div>
+      <div style={styles.content}>
+      <div style={styles.habitsHeader}>
         <button 
           onClick={() => setShowAddForm(!showAddForm)}
-          className="add-habit-btn"
+          style={styles.addButton}
         >
           + Add Habit
         </button>
       </div>
 
       {showAddForm && (
-        <div className="add-habit-form">
-          <div className="form-row">
+        <div style={styles.addForm}>
+          <div style={styles.formRow}>
             <select 
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="category-select"
+              style={styles.select}
             >
               {Object.entries(categories).map(([key, cat]) => (
                 <option key={key} value={key}>
@@ -201,7 +205,7 @@ function HabitTracker() {
               onChange={(e) => setNewHabit(e.target.value)}
               placeholder="Enter habit name..."
               className="habit-input"
-              onKeyPress={(e) => e.key === 'Enter' && addHabit()}
+              onKeyDown={(e) => e.key === 'Enter' && addHabit()}
             />
             
             <button onClick={() => addHabit()} className="save-habit-btn">
@@ -299,8 +303,83 @@ function HabitTracker() {
           <p>Add your first habit to begin tracking your progress!</p>
         </div>
       )}
+      </div>
     </div>
   )
+}
+
+const styles = {
+  container: {
+    minHeight: '100vh',
+    background: 'linear-gradient(to bottom, #f8fafc 0%, #f1f5f9 100%)',
+    padding: '2rem 1rem'
+  },
+  header: {
+    background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
+    borderRadius: '24px',
+    padding: '3rem 2rem',
+    marginBottom: '3rem',
+    boxShadow: '0 10px 40px rgba(102, 126, 234, 0.3)',
+    textAlign: 'center',
+    maxWidth: '1400px',
+    margin: '0 auto 3rem',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  title: {
+    fontSize: '2.5rem',
+    fontWeight: '700',
+    color: '#fff',
+    marginBottom: '0.75rem'
+  },
+  subtitle: {
+    fontSize: '1.125rem',
+    color: 'rgba(255,255,255,0.95)'
+  },
+  content: {
+    maxWidth: '1400px',
+    margin: '0 auto'
+  },
+  habitsHeader: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    marginBottom: '2rem'
+  },
+  addButton: {
+    background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '12px',
+    padding: '0.875rem 1.75rem',
+    fontSize: '1rem',
+    fontWeight: '600',
+    cursor: 'pointer',
+    boxShadow: '0 4px 15px rgba(102, 126, 234, 0.4)',
+    transition: 'all 0.3s ease'
+  },
+  addForm: {
+    background: '#fff',
+    borderRadius: '20px',
+    padding: '2rem',
+    marginBottom: '2rem',
+    boxShadow: '0 4px 20px rgba(0,0,0,0.08)'
+  },
+  formRow: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 2fr auto',
+    gap: '1rem',
+    marginBottom: '1rem'
+  },
+  select: {
+    padding: '0.75rem 1rem',
+    border: '2px solid #e2e8f0',
+    borderRadius: '12px',
+    fontSize: '1rem',
+    outline: 'none',
+    background: '#fff',
+    cursor: 'pointer'
+  }
 }
 
 export default HabitTracker
