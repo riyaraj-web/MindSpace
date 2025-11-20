@@ -9,9 +9,7 @@ A comprehensive mental wellness platform that helps users track their mood, prac
 - **🎯 Habit Tracker** - Build and maintain positive habits
 - **🧘 Meditation & Breathing** - Guided exercises for mindfulness
 - **🤖 AI Companion** - Get personalized insights and support
-- **🎨 Collaborative Art** - Express yourself creatively
 - **📖 Recovery Stories** - Read inspiring stories from the community
-- **🎵 Mood-Based Music** - Curated playlists based on your emotions
 
 ## 🚀 Quick Start
 
@@ -123,42 +121,6 @@ MindSpace/
 - Rate limiting
 - Input validation
 - Helmet security headers
-
-## 📝 API Endpoints
-
-### Authentication
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - Login user
-- `GET /api/auth/profile` - Get user profile
-- `PUT /api/auth/profile` - Update profile
-
-### Mood Tracking
-- `POST /api/mood` - Create mood entry
-- `GET /api/mood` - Get mood entries
-- `GET /api/mood/analytics` - Get mood analytics
-- `PUT /api/mood/:id` - Update mood entry
-- `DELETE /api/mood/:id` - Delete mood entry
-
-### Journal
-- `POST /api/journal` - Create journal entry
-- `GET /api/journal` - Get journal entries
-- `GET /api/journal/:id` - Get specific entry
-- `PUT /api/journal/:id` - Update entry
-- `DELETE /api/journal/:id` - Delete entry
-
-### Habits
-- `POST /api/habits` - Create habit
-- `GET /api/habits` - Get all habits
-- `POST /api/habits/:id/complete` - Mark habit complete
-- `GET /api/habits/:id/analytics` - Get habit analytics
-- `PUT /api/habits/:id` - Update habit
-- `DELETE /api/habits/:id` - Delete habit
-
-### Meditation
-- `POST /api/meditation/sessions` - Start session
-- `GET /api/meditation/history` - Get session history
-- `GET /api/meditation/stats` - Get statistics
-- `POST /api/meditation/sessions/:id/complete` - Complete session
 
 ## 🌐 Deployment
 
