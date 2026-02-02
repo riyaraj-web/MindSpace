@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/mindspace-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mindspace - Mental Health & Wellness Platform for mood tracking, meditation, journaling, and community support" />
+    <!-- Force redeploy -->
+    <meta name="keywords" content="mental health, wellness, meditation, mood tracking, journaling, mindfulness" />
+    <meta name="author" content="Your Name" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mindspace-wellness.vercel.app/" />
+    <meta property="og:title" content="Mindspace - Mental Health & Wellness Platform" />
+    <meta property="og:description" content="Comprehensive wellness platform for mood tracking, meditation, journaling, and community support" />
+    <meta property="og:image" content="/mindspace-preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://mindspace-wellness.vercel.app/" />
+    <meta property="twitter:title" content="Mindspace - Mental Health & Wellness Platform" />
+    <meta property="twitter:description" content="Comprehensive wellness platform for mood tracking, meditation, journaling, and community support" />
+    <meta property="twitter:image" content="/mindspace-preview.png" />
+    
+    <title>Mindspace - Mental Health & Wellness Platform</title>
+    
+    <!-- Force CSS Loading -->
+    <link rel="preload" href="/src/styles.css" as="style">
+    <link rel="stylesheet" href="/src/styles.css">
+    
+    <!-- Critical CSS for immediate styling -->
+    <style>
+      /* Reset and base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Inter', sans-serif !important;
+        line-height: 1.6;
+        color: #1e293b !important;
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%) !important;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      /* Header Styles */
+      .header {
+        background: linear-gradient(135deg, #6366f1 0%, #14b8a6 100%) !important;
+        color: white !important;
+        padding: 1.5rem 0 !important;
+        box-shadow: 0 8px 32px rgba(99, 102, 241, 0.25) !important;
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 100 !important;
+      }
+      
+      .header .container {
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+        padding: 0 20px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+      }
+      
+      .logo a {
+        color: white !important;
+        text-decoration: none !important;
+        font-size: 2rem !important;
+        font-weight: 800 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+      }
+      
+      .nav {
+        display: flex !important;
+        gap: 0.5rem !important;
+        background: rgba(255,255,255,0.1) !important;
+        padding: 0.5rem !important;
+        border-radius: 50px !important;
+      }
+      
+      .nav-link {
+        color: white !important;
+        text-decoration: none !important;
+        padding: 0.75rem 1rem !important;
+        border-radius: 25px !important;
+        font-weight: 500 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.25rem !important;
+        min-width: 70px !important;
+        transition: all 0.3s ease !important;
+      }
+      
+      .nav-link:hover {
+        background: rgba(255,255,255,0.25) !important;
+        transform: translateY(-2px) !important;
+      }
+      
+      .nav-link.active {
+        background: rgba(255,255,255,0.25) !important;
+        font-weight: 600 !important;
+      }
+      
+      .nav-icon {
+        font-size: 1.2rem !important;
+      }
+      
+      .nav-label {
+        font-size: 0.8rem !important;
+      }
+      
+      /* Page Styles */
+      .page {
+        max-width: 1000px !important;
+        margin: 2rem auto !important;
+        padding: 0 20px !important;
+      }
+      
+      /* Hero Section */
+      .hero {
+        text-align: center !important;
+        margin-bottom: 4rem !important;
+        padding: 3rem 0 !important;
+      }
+      
+      .hero h2 {
+        font-size: 3.5rem !important;
+        margin-bottom: 1.5rem !important;
+        color: #1e293b !important;
+        font-weight: 800 !important;
+        background: linear-gradient(135deg, #6366f1 0%, #14b8a6 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+      }
+      
+      .hero p {
+        font-size: 1.3rem !important;
+        color: #475569 !important;
+        max-width: 600px !important;
+        margin: 0 auto !important;
+      }
+      
+      /* Features Grid */
+      .features {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+        gap: 2rem !important;
+        margin-top: 3rem !important;
+      }
+      
+      .feature-card {
+        background: white !important;
+        padding: 2.5rem !important;
+        border-radius: 20px !important;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1) !important;
+        text-align: center !important;
+        transition: all 0.3s ease !important;
+        border: 1px solid #e2e8f0 !important;
+        position: relative !important;
+      }
+      
+      .feature-card::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 4px !important;
+        background: linear-gradient(135deg, #6366f1 0%, #14b8a6 100%) !important;
+      }
+      
+      .feature-card:hover {
+        transform: translateY(-10px) !important;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.15) !important;
+      }
+      
+      .feature-card h3 {
+        margin-bottom: 1rem !important;
+        color: #1e293b !important;
+        font-size: 1.3rem !important;
+        font-weight: 700 !important;
+      }
+      
+      .feature-card p {
+        color: #475569 !important;
+        line-height: 1.6 !important;
+      }
+      
+      /* CTA Section */
+      .cta-section {
+        text-align: center !important;
+        margin-top: 3rem !important;
+      }
+      
+      .cta-button {
+        background: linear-gradient(135deg, #6366f1 0%, #14b8a6 100%) !important;
+        color: white !important;
+        text-decoration: none !important;
+        padding: 1rem 2rem !important;
+        border-radius: 10px !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+        display: inline-block !important;
+        transition: transform 0.2s !important;
+      }
+      
+      .cta-button:hover {
+        transform: translateY(-2px) !important;
+      }
+      
+      /* User Menu */
+      .user-menu-button {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border: 2px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 12px !important;
+        padding: 0.75rem 1rem !important;
+        color: white !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.75rem !important;
+      }
+      
+      .user-avatar {
+        width: 32px !important;
+        height: 32px !important;
+        border-radius: 50% !important;
+        background: rgba(255, 255, 255, 0.2) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      
+      .user-info {
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      
+      .user-name {
+        font-size: 0.9rem !important;
+        font-weight: 600 !important;
+      }
+      
+      .user-status {
+        font-size: 0.7rem !important;
+        color: #4ade80 !important;
+      }
+      
+      /* Mobile Navigation Fix */
+      .mobile-menu-toggle {
+        display: none !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        border: 2px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 8px !important;
+        padding: 0.5rem !important;
+        cursor: pointer !important;
+      }
+      
+      .mobile-nav {
+        display: none !important;
+        position: fixed !important;
+        top: 0 !important;
+        right: -100% !important;
+        width: 320px !important;
+        height: 100vh !important;
+        background: white !important;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2) !important;
+        transition: right 0.3s ease !important;
+        z-index: 1002 !important;
+      }
+      
+      .mobile-nav.active {
+        right: 0 !important;
+      }
+      
+      .mobile-nav-header {
+        padding: 2rem 1.5rem 1rem !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        background: linear-gradient(135deg, #6366f1, #14b8a6) !important;
+        color: white !important;
+      }
+      
+      .close-mobile-nav {
+        background: none !important;
+        border: none !important;
+        color: white !important;
+        font-size: 1.5rem !important;
+        cursor: pointer !important;
+        padding: 0.5rem !important;
+        border-radius: 6px !important;
+      }
+      
+      .mobile-nav-links {
+        flex: 1 !important;
+        padding: 1rem 0 !important;
+      }
+      
+      .mobile-nav-link {
+        display: flex !important;
+        align-items: center !important;
+        gap: 1rem !important;
+        padding: 1rem 1.5rem !important;
+        color: #1e293b !important;
+        text-decoration: none !important;
+        transition: all 0.2s ease !important;
+        border-left: 3px solid transparent !important;
+      }
+      
+      .mobile-nav-link:hover {
+        background: rgba(99, 102, 241, 0.1) !important;
+        border-left-color: #6366f1 !important;
+      }
+      
+      .mobile-nav-overlay {
+        display: none !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+        z-index: 1001 !important;
+      }
+      
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .hero h2 {
+          font-size: 2rem !important;
+        }
+        
+        .features {
+          grid-template-columns: 1fr !important;
+        }
+        
+        .nav {
+          display: none !important;
+        }
+        
+        .mobile-menu-toggle {
+          display: block !important;
+        }
+        
+        .mobile-nav {
+          display: block !important;
+        }
+        
+        .mobile-nav-overlay {
+          display: block !important;
+        }
+      }
+      
+      /* Auth page styles */
+      .auth-page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+      
+      .auth-card {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e2e8f0;
+        max-width: 420px;
+        width: 100%;
+      }
+      
+      .auth-header h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 0.5rem;
+        text-align: center;
+        background: linear-gradient(135deg, #6366f1 0%, #14b8a6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      .auth-header p {
+        color: #475569;
+        font-size: 0.95rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+      
+      .form-group {
+        margin-bottom: 1.25rem;
+      }
+      
+      .form-group label {
+        display: block;
+        font-weight: 600;
+        color: #1e293b;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .form-group input {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 2px solid #e2e8f0;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        background: white;
+        color: #1e293b;
+      }
+      
+      .form-group input:focus {
+        outline: none;
+        border-color: #6366f1;
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+      }
+      
+      .auth-button {
+        width: 100%;
+        background: linear-gradient(135deg, #6366f1 0%, #14b8a6 100%);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        margin-bottom: 1.25rem;
+      }
+      
+      .auth-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+      }
+      
+      .google-auth-button {
+        width: auto;
+        max-width: 280px;
+        margin: 0 auto 1.5rem auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        border: 2px solid #e2e8f0;
+        border-radius: 10px;
+        background: white;
+        color: #1e293b;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .google-auth-button:hover {
+        border-color: #6366f1;
+        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.1);
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div id="loading-fallback" style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: Arial, sans-serif; background: white;">
+        <div style="text-align: center; color: #1e293b;">
+          <div style="width: 50px; height: 50px; border: 3px solid #e2e8f0; border-top: 3px solid #6366f1; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 20px;"></div>
+          <h2 style="margin: 0 0 10px 0;">Loading Mindspace...</h2>
+          <p style="margin: 0; opacity: 0.6;">Your wellness journey awaits</p>
+          <p id="debug-info" style="margin: 10px 0; font-size: 12px; opacity: 0.4;">Initializing...</p>
+        </div>
+      </div>
+      <style>
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      </style>
+    </div>
+    
+    <script>
+      // Debug script loading
+      console.log('HTML: Page loaded, attempting to load React app');
+      
+      // Mobile menu fix - close any open mobile menus
+      document.addEventListener('DOMContentLoaded', function() {
+        // Hide mobile navigation by default
+        const mobileNavs = document.querySelectorAll('.mobile-nav');
+        mobileNavs.forEach(nav => {
+          nav.classList.remove('active');
+          nav.style.right = '-100%';
+        });
+        
+        // Hide mobile overlays
+        const overlays = document.querySelectorAll('.mobile-nav-overlay');
+        overlays.forEach(overlay => {
+          overlay.style.display = 'none';
+        });
+        
+        // Close mobile menu when clicking overlay
+        document.addEventListener('click', function(e) {
+          if (e.target.classList.contains('mobile-nav-overlay')) {
+            const mobileNav = document.querySelector('.mobile-nav');
+            if (mobileNav) {
+              mobileNav.classList.remove('active');
+            }
+            e.target.style.display = 'none';
+          }
+        });
+      });
+      
+      // Update debug info
+      setTimeout(() => {
+        const debugInfo = document.getElementById('debug-info');
+        if (debugInfo) {
+          debugInfo.textContent = 'Loading React bundle...';
+        }
+      }, 1000);
+      
+      // If React doesn't load in 10 seconds, show error
+      setTimeout(() => {
+        const loadingFallback = document.getElementById('loading-fallback');
+        if (loadingFallback && loadingFallback.style.display !== 'none') {
+          const debugInfo = document.getElementById('debug-info');
+          if (debugInfo) {
+            debugInfo.innerHTML = '⚠️ React app failed to load. <button onclick="window.location.reload()" style="margin-left: 10px; padding: 5px 10px; background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3); border-radius: 3px; cursor: pointer;">Retry</button>';
+          }
+        }
+      }, 10000);
+    </script>
+    
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
