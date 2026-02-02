@@ -1,11 +1,7 @@
-import RecoveryStoriesWorking from '../components/RecoveryStoriesWorking';
+import RecoveryStories from '../components/RecoveryStories';
 
 const RecoveryStoriesPage = () => {
-  return (
-    <div className="page">
-      <RecoveryStoriesWorking />
-    </div>
-  );
+  return <RecoveryStories />;
 };
 
 export default RecoveryStoriesPage;
