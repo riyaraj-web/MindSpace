@@ -11,7 +11,6 @@ import HabitTracker from './pages/HabitTracker';
 import BreathingPage from './pages/BreathingPage';
 import RecoveryStoriesPage from './pages/RecoveryStoriesPage';
 import AIAssistantPage from './pages/AIAssistantPage';
-import AICompanion from './components/AICompanion';
 
 const AppContent = () => {
     const { isAuthenticated, loading } = useAuth();
@@ -47,7 +46,6 @@ const AppContent = () => {
                     <Route path="/ai-assistant" element={<AIAssistantPage />} />
                 </Routes>
             </main>
-            <AICompanion />
         </div>
     );
 };
