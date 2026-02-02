@@ -16,12 +16,42 @@ A comprehensive mental wellness application designed to help users track their e
 
 ## Tech Stack
 
-- **Frontend**: React 18, Vite
-- **Routing**: React Router DOM
-- **State Management**: Redux Toolkit, React Context
-- **Styling**: Tailwind CSS, Custom Design System
-- **Charts**: Recharts
-- **Icons**: Lucide React
-- **Backend**: Node.js, Express (in `/server` directory)
+### Frontend
+- React 18
+- Vite
+- React Router DOM
+- Redux Toolkit
+- React Context API
 
+### Styling & Design
+- Tailwind CSS
+- Custom Design System
+- Lucide React
+- Recharts
+
+### Backend & Authentication
+- Node.js
+- Express.js
+- JWT (JSON Web Tokens)
+- bcrypt
+- MongoDB/Local Storage
+
+### AI & Intelligence
+- Custom AI Algorithms
+- Rule-based AI System
+- Natural Language Processing
+- Sentiment Analysis
+
+### Development Tools
+- ESLint
+- PostCSS
+- Autoprefixer
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+
+ 
  
